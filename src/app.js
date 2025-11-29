@@ -13,5 +13,15 @@ function citationAleatoire() {
     return citations[index];
 }
 
+// Afficher la citation
+function afficherCitation() {
+  document.getElementById("citation").textContent = citationAleatoire();
+}
+
+document.getElementById("btn").addEventListener("click", afficherCitation);
+
+// Première citation au chargement de la page
+afficherCitation();
+
 // Export du module
 module.exports = citationAleatoire;
