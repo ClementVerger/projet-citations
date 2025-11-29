@@ -7,11 +7,17 @@ const citations = [
     "Fais de ta vie un rêve, et d'un rêve, une réalité. - Antoine de Saint-Exupéry"
 ];
 
-// Fonction pour obtenir une citation aléatoire
 function citationAleatoire() {
-    const index = Math.floor(Math.random() * citations.length);
-    return citations[index];
+  const index = Math.floor(Math.random() * citations.length);
+  return citations[index];
 }
 
-// Export du module
-module.exports = citationAleatoire;
+// Afficher la citation
+function afficherCitation() {
+  document.getElementById("citation").textContent = citationAleatoire();
+}
+
+document.getElementById("btn").addEventListener("click", afficherCitation);
+
+// Première citation au chargement de la page
+afficherCitation();
